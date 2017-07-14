@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8" />
+    <title>Sign In</title>
+    <style>
+        .error {
+            font-style: italic;
+            color: red;
+    </style>
+</head>
+<body>
+    <form th:object="${user}" method="post">
+        <fieldset title="Sign in screen">
+            <legend>Sign in</legend>
+            <label th:for="username">Username</label>
+            <input type="text" th:value="*{username}" th:field="*{username}" placeholder="Enter your username" />
+            <span class="error" th:errors="*{username}"></span><br />
+            <label th:for="password">Password</label>
+            <input type="password" th:field="*{password}" placeholder="Enter your password" />
+            <span class="error" th:errors="*{password}"></span><br />
+            <label th:for="email">Email</label>
+            <input type="email" th:value="*{email}" th:field="*{email}" placeholder="Please enter your email" /><br />
+            <input type="submit" value="Sign in" />
+        </fieldset>
+
+    </form>
+
+</body>
+</html>
