@@ -1,5 +1,6 @@
 package com.toure.project.LakeBank.controllers;
 
+import com.toure.project.LakeBank.models.Data.userDao;
 import com.toure.project.LakeBank.models.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -50,7 +51,17 @@ public class UserController {
             return "signup";
         }
 
-        return "signup";
+        return "user-info";
+    }
+
+    @RequestMapping(value = "signup", method = RequestMethod.POST)
+    public String processUserInfoForm(Model model, @ModelAttribute @Valid User user, Errors errors) {
+
+        if (errors.hasErrors()){
+            return "user-info";
+        }
+//        userDao.save(user);
+        return "index";
     }
 
     @RequestMapping(value = "signin", method = RequestMethod.GET)
