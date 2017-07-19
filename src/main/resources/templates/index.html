@@ -1,25 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8" />
-    <title>Welcome to Lake Bank</title>
-    <style>
-        .navigation {
-            display: inline;
-            text-decoration: none;
-        }
-    </style>
-</head>
-<body>
-    <nav>
-        <ul class="navigation">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="/deposits.html">Deposits</a></li>
-            <li><a href="/loans.html">Loans</a></li>
-            <li><a href="cds.html">CD's</a></li>
-            <li th:text="${'Signed in as ' + email}"></li>
-        </ul>
-    </nav>
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<h1 th:text="${title}">MAIN SCREEN</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
 
 <form method="get" th:object="${user}">
     <h3 th:text="*{'Hello ' + username}"></h3>

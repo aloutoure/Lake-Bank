@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8" />
-    <title>Sign up</title>
-    <style>
-        .error {
-            font-style: italic;
-            color: red;
-    </style>
-</head>
-<body>
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<h1 th:text="${title}">sIGN UP SCREEN</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
 <form th:object="${user}" method="post">
     <fieldset title="Sign up screen">
         <legend>Sign up</legend>

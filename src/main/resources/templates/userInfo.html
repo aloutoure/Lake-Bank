@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<form method="post" th:object="${user}" action="/signup">
+    <fieldset>
+        <legend>Personal information</legend>
+    <label th:for="firstName">First Name</label>
+    <input th:field="*{firstName}" />
+    <label th:for="lastName">Last Name</label>
+    <input th:field="*{lastName}" /><br />
+    <label th:for="address"></label>
+    <input th:field="*{address}" /><br />
+    <label th:for="city"></label>
+    <input th:field="*{city}" /><br />
+    <label th:for="state"></label>
+    <select th:field="state">
+        <option th:value="ALABAMA">AL</option>
+        <option th:value="ALASKA">AK</option>
+        <option th:value="ARIZONA">AZ</option>
+        <option th:value="ARKANSAS">AR</option>
+        <option th:value="CALIFORNIA">CA</option>
+        <option th:value="COLORADO">CO</option>
+        <option th:value="CONNECTICUT">CT</option>
+        <option th:value="DELAWARE">DE</option>
+        <option th:value="FLORIDA">FL</option>
+        <option th:value="GEORGIA">GA</option>
+        <option th:value="HAWAII">HI</option>
+        <option th:value="IDAHO">ID</option>
+        <option th:value="ILLINOIS">IL</option>
+        <option th:value="INDIANA">IN</option>
+        <option th:value="IOWA">IA</option>
+        <option th:value="KANSAS">KS</option>
+        <option th:value="KENTUCKY">KY</option>
+        <option th:value="LOUISIANA">LA</option>
+        <option th:value="MAINE">ME</option>
+        <option th:value="MARYLAND">MD</option>
+        <option th:value="MASSACHUSETTS">MA</option>
+        <option th:value="MICHIGAN">MI</option>
+        <option th:value="MINNESOTA">MN</option>
+        <option th:value="MISSISSIPPI">MS</option>
+        <option th:value="MISSOURI">MO</option>
+        <option th:value="MONTANA">MT</option>
+        <option th:value="NEBRASKA">NE</option>
+        <option th:value="NEVADA">NV</option>
+        <option th:value="NEW HAMPSHIRE">NH</option>
+        <option th:value="NEW JERSEY">NJ</option>
+        <option th:value="NEW MEXICO">NM</option>
+        <option th:value="NEW YORK">NY</option>
+        <option th:value="NORTH CAROLINA">NC</option>
+        <option th:value="NORTH DAKOTA">ND</option>
+        <option th:value="OHIO">OH</option>
+        <option th:value="OKLAHOMA">OK</option>
+        <option th:value="OREGON">OR</option>
+        <option th:value="PENNSYLVANIA">PA</option>
+        <option th:value="RHODE ISLAND">RI</option>
+        <option th:value="SOUTH CAROLINA">SC</option>
+        <option th:value="SOUTH DAKOTA">SD</option>
+        <option th:value="TENNESSEE">TN</option>
+        <option th:value="TEXAS">TX</option>
+        <option th:value="UTAH">UT</option>
+        <option th:value="VERMONT">VT</option>
+        <option th:value="VIRGINIA">VA</option>
+        <option th:value="WASHINGTON">WA</option>
+        <option th:value="WEST VIRGINIA">WV</option>
+        <option th:value="WISCONSIN">WI</option>
+        <option th:value="WYOMING">WY</option>
+    </select><br />
+    <label th:for="phone">Phone Number</label>
+    <input type="tel" name="phone" />
+    </fieldset>
+    <input type="submit" value="Submit form" />
+</form>
+
+</body>
+</html>
